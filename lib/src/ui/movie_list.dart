@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/src/ui/plugin_test.dart';
 import 'package:flutter_bloc/src/ui/reqres_list.dart';
 import '../models/item_model.dart';
 import '../blocs/movies_bloc.dart';
@@ -91,6 +92,23 @@ class MovieListState extends State<MovieList> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => ReqresList()),
+              );
+            },
+          ),
+          height: 40,
+          margin: EdgeInsets.all(24),
+        ),
+        Container(
+          child: GestureDetector(
+            child: Text(
+              "TEST PLUGINS",
+              style: TextStyle(fontSize: 18),
+            ),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PluginTest()),
               );
             },
           ),
